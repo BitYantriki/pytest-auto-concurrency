@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pytest-auto-concurrency"
+version = "1.0.0"
+authors = [
+    {name = "Bityantriki Team", email = "dev@bityantriki.com"},
+]
+description = "Simple pytest plugin for intelligent concurrency strategy selection"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+classifiers = [
+    "Framework :: Pytest",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Testing",
+]
+keywords = ["pytest", "testing", "parallel", "concurrency"]
+
+dependencies = [
+    "pytest>=6.0",
+    "pytest-xdist>=2.0",
+    "pytest-parallel>=0.1.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/BitYantriki/pytest-auto-concurrency"
+Repository = "https://github.com/BitYantriki/pytest-auto-concurrency"
+
+[project.entry-points.pytest11]
+auto_concurrency = "pytest_auto_concurrency.plugin"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pytest_auto_concurrency*"]
